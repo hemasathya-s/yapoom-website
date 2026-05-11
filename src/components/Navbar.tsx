@@ -33,7 +33,7 @@ export const Navbar = () => {
         <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={`container ${styles.container}`}>
                 <Link href="/" className={styles.logo}>
-                    <Image src="/logo/yapoom-logo-horizontal.webp" alt="Yapoom Solutions" width={250} height={60} priority style={{ objectFit: 'contain' }} />
+                    <Image src="/logo/yapoom-logo-horizontal.webp" alt="Yapoom Solutions" width={250} height={30} priority style={{ objectFit: 'contain' }} />
                 </Link>
 
                 {/* Desktop Nav */}

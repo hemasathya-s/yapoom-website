@@ -22,7 +22,7 @@ export const projects: Project[] = [
         date: 'October 2025',
         description: 'A complete website redesign for an established manufacturing company based in Chennai. The project focused on creating a modern, responsive, and SEO-optimized site that reflects their industry expertise.',
         challenge: 'The existing website was outdated, non-responsive, and poorly ranked on search engines, resulting in low online inquiries and poor user experience on mobile devices.',
-        solution: 'FT Digital Solutions rebuilt the site from scratch using modern web technologies, ensured mobile-first responsiveness, and integrated on-page SEO best practices. The result was a 40% increase in organic traffic within three months of launch.'
+        solution: 'Yapoom solutions rebuilt the site from scratch using modern web technologies, ensured mobile-first responsiveness, and integrated on-page SEO best practices. The result was a 40% increase in organic traffic within three months of launch.'
     },
     {
         id: '2',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
         date: 'September 2025',
         description: 'A complete brand identity project for a tech startup entering the Chennai market. The engagement covered logo design, color palette, typography, brand guidelines, and marketing collateral.',
         challenge: 'The startup had no visual identity and needed to establish credibility quickly to attract early customers and investors in a competitive market.',
-        solution: 'FT Digital Solutions developed a professional, modern brand identity aligned with the startup\'s vision. The new brand helped them secure their first 50 clients within two months of launch.'
+        solution: 'Yapoom solutions developed a professional, modern brand identity aligned with the startup\'s vision. The new brand helped them secure their first 50 clients within two months of launch.'
     },
     {
         id: '4',
@@ -70,7 +70,7 @@ export const projects: Project[] = [
         date: 'July 2025',
         description: 'A targeted Google Ads campaign for a real estate developer looking to generate qualified leads for a new residential project launch in Chennai.',
         challenge: 'Previous ad campaigns had high spend but low-quality leads, resulting in poor conversion rates for the sales team.',
-        solution: 'FT Digital Solutions restructured the campaign with refined keyword targeting, improved ad copy, and optimized landing pages. The cost-per-lead dropped by 50% while lead quality improved significantly.'
+        solution: 'Yapoom solutions restructured the campaign with refined keyword targeting, improved ad copy, and optimized landing pages. The cost-per-lead dropped by 50% while lead quality improved significantly.'
     },
     {
         id: '6',
@@ -82,6 +82,6 @@ export const projects: Project[] = [
         date: 'June 2025',
         description: 'A custom mobile application for a healthcare provider enabling patients to book appointments, access medical records, and consult with doctors via video call.',
         challenge: 'The provider relied entirely on phone-based bookings, leading to long wait times and patient dissatisfaction. They needed a digital-first solution to modernize operations.',
-        solution: 'FT Digital Solutions developed a cross-platform Flutter app for both Android and iOS. The app reduced patient wait times by 60% and received a 4.7/5 rating on the Play Store within the first month.'
+        solution: 'Yapoom solutions developed a cross-platform Flutter app for both Android and iOS. The app reduced patient wait times by 60% and received a 4.7/5 rating on the Play Store within the first month.'
     }
 ];
