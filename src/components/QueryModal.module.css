@@ -1,0 +1,87 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal {
+    background: var(--background);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.closeBtn:hover {
+    color: var(--text-main);
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--text-main);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.submitBtn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.submitBtn:hover {
+    background: var(--primary-hover);
+}

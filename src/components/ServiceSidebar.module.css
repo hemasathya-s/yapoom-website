@@ -1,0 +1,77 @@
+.sidebar {
+    background-color: var(--primary);
+    /* Teal background as per screenshot */
+    padding: 40px;
+    border-radius: 12px;
+    color: var(--white);
+    height: fit-content;
+}
+
+.sectionTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--white);
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link:hover {
+    color: var(--primary);
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.link:hover .dot {
+    background-color: var(--primary);
+}
+
+/* Contact Widget inside Sidebar */
+.contactWidget {
+    background-color: #fbfbf7;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.contactTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.icon {
+    color: var(--primary);
+}

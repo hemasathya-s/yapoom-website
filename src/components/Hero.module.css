@@ -1,0 +1,117 @@
+.hero {
+    padding: 120px 0 80px;
+    background-color: var(--background);
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .image {
+    transform: scale(1.02);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.label {
+    display: inline-block;
+    background-color: var(--background-secondary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.iconWrapper {
+    background-color: var(--primary);
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.featureContent h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.featureContent p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .imageWrapper {
+        order: -1;
+    }
+}

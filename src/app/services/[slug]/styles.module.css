@@ -1,0 +1,23 @@
+.section {
+    padding: 100px 0;
+    background-color: var(--background);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sidebarColumn {
+        order: 2;
+        /* Move sidebar to bottom on mobile if preferred, or top (order: -1) */
+    }
+}

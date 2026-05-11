@@ -1,0 +1,118 @@
+.hero {
+    padding: 160px 0 100px;
+    background-color: var(--background);
+    color: var(--text-main);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background decorations inferred from "geometric overlays" */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--bg-secondary);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.title {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 500px;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Organic blob shape */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: border-radius 0.5s ease;
+}
+
+.imageWrapper:hover {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+}
+
+.image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Specific Teal CTA Button Style Override */
+.ctaButton {
+    background-color: var(--primary);
+    color: var(--white);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.ctaButton:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .imageWrapper {
+        height: 350px;
+        order: -1;
+    }
+}
