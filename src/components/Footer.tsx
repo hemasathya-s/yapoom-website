@@ -40,7 +40,7 @@ export const Footer = () => {
             </div>
 
             <div className="container" style={{ marginTop: '60px', paddingTop: '20px', borderTop: '1px solid rgba(0, 0, 0,0.05)', textAlign: 'center', color: 'var(--text-main)' }}>
-                © 2024 Yapoom Solutions. All rights reserved.
+                © 2026 Yapoom Solutions. All rights reserved.
             </div>
         </footer>
     );
