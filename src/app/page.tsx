@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 // import { Hero } from "@/components/Hero"; // Original Hero
 import { HeroModern } from "@/components/HeroModern";
-import { Logos } from "@/components/Logos";
+import Logos from "@/components/Logos";
 import { Stats } from "@/components/Stats";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
