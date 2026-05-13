@@ -17,7 +17,7 @@ const logos = [
     '/client-logos/tnssca-logo.svg',
 ];
 
-export default function Logos() {
+export function Logos() {
     return (
         <section className={styles.section}>
             <div className={styles.marquee}>
