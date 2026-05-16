@@ -27,19 +27,25 @@ export default function RootLayout({
         {children}
         <FloatingContact />
         <QueryModal />
-        {/* <Script title="tawk-to" id="tawk-to" strategy="afterInteractive" dangerouslySetInnerHTML={{
-          __html: `
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/69c0bb3cc6e9bd1c38819900/1jkcdmpl4';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `
-        }} /> */}
+
+
+
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-93FE062BM9"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-93FE062BM9');
+          `}
+        </Script>
       </body>
     </html>
   );
