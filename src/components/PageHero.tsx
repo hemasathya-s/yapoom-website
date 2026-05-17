@@ -18,13 +18,13 @@ export const PageHero: React.FC<PageHeroProps> = ({ title, currentPage }) => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.yapoomsolutions.com/"
+                "item": "yapoom.in"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": currentPage,
-                "item": `https://www.yapoomsolutions.com/${currentPage.toLowerCase().replace(/\s+/g, '-')}`
+                "item": `yapoom.in${currentPage.toLowerCase().replace(/\s+/g, '-')}`
             }
         ]
     };

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.yapoomsolutions.com'; // Replace with the actual production URL
+    const baseUrl = 'https://www.yapoom.in'; // Replace with the actual production URL
 
     // You can dynamically fetch routes or blog posts here if needed.
     // For now, these are the static routes in the application.

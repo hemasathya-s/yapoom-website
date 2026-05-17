@@ -8,9 +8,9 @@ export async function GET() {
 
     // Static mapping
     xml += `  <url>\n`;
-    xml += `    <loc>https://www.yapoomsolutions.com/</loc>\n`;
+    xml += `    <loc>yapoom.in</loc>\n`;
     xml += `    <image:image>\n`;
-    xml += `      <image:loc>https://www.yapoomsolutions.com/hero-modern-team.png</image:loc>\n`;
+    xml += `      <image:loc>yapoom.inhero-modern-team.png</image:loc>\n`;
     xml += `      <image:title>Yapoom Solutions Enterprise Architecture</image:title>\n`;
     xml += `    </image:image>\n`;
     xml += `  </url>\n`;
@@ -18,9 +18,9 @@ export async function GET() {
     // Dynamic Projects rendering
     projects.forEach(proj => {
         xml += `  <url>\n`;
-        xml += `    <loc>https://www.yapoomsolutions.com/projects</loc>\n`;
+        xml += `    <loc>yapoom.inprojects</loc>\n`;
         xml += `    <image:image>\n`;
-        xml += `      <image:loc>https://www.yapoomsolutions.com${proj.image}</image:loc>\n`;
+        xml += `      <image:loc>https://www.yapoom.in${proj.image}</image:loc>\n`;
         xml += `      <image:title>${proj.title}</image:title>\n`;
         xml += `    </image:image>\n`;
         xml += `  </url>\n`;
@@ -29,9 +29,9 @@ export async function GET() {
     // Dynamic Blogs mapping
     blogs.forEach(blog => {
         xml += `  <url>\n`;
-        xml += `    <loc>https://www.yapoomsolutions.com/blog/${blog.slug}</loc>\n`;
+        xml += `    <loc>yapoom.inblog/${blog.slug}</loc>\n`;
         xml += `    <image:image>\n`;
-        xml += `      <image:loc>https://www.yapoomsolutions.com${blog.image}</image:loc>\n`;
+        xml += `      <image:loc>https://www.yapoom.in${blog.image}</image:loc>\n`;
         xml += `      <image:title>${blog.title}</image:title>\n`;
         xml += `    </image:image>\n`;
         xml += `  </url>\n`;

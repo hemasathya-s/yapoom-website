@@ -13,7 +13,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.yapoomsolutions.com'),
+  metadataBase: new URL('https://www.yapoom.in'),
   title: {
     default: "Yapoom Solutions - Enterprise Software & Tech Consulting",
     template: "%s | Yapoom Solutions"
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Yapoom Solutions",
     description: "Scalable cloud, software, telecom, and hardware automation solutions tailored for your business growth.",
-    url: "https://www.yapoomsolutions.com",
+    url: "https://www.yapoom.in",
     siteName: "Yapoom Solutions",
     images: [{ url: "/logo/yapoom-logo-horizontal.webp" }],
     locale: "en_US",
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     images: ["/logo/yapoom-logo-horizontal.webp"],
   },
   alternates: {
-    canonical: "https://www.yapoomsolutions.com",
+    canonical: "https://www.yapoom.in",
     languages: {
-      'en-US': 'https://www.yapoomsolutions.com',
-      'x-default': 'https://www.yapoomsolutions.com'
+      'en-US': 'https://www.yapoom.in',
+      'x-default': 'https://www.yapoom.in'
     },
   },
   other: {
-    'opensearch': "https://www.yapoomsolutions.com/opensearch.xml"
+    'opensearch': "yapoom.inopensearch.xml"
   }
 };
 
@@ -102,10 +102,10 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                "@id": "https://www.yapoomsolutions.com/#organization",
+                "@id": "yapoom.in#organization",
                 "name": "Yapoom Solutions",
-                "url": "https://www.yapoomsolutions.com",
-                "logo": "https://www.yapoomsolutions.com/logo/yapoom-logo-horizontal.webp",
+                "url": "https://www.yapoom.in",
+                "logo": "yapoom.inlogo/yapoom-logo-horizontal.webp",
                 "sameAs": [
                   "https://www.linkedin.com/company/yapoomsolutions",
                   "https://twitter.com/YapoomSolutions",
@@ -115,12 +115,12 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "@id": "https://www.yapoomsolutions.com/#localbusiness",
-                "parentOrganization": { "@id": "https://www.yapoomsolutions.com/#organization" },
+                "@id": "yapoom.in#localbusiness",
+                "parentOrganization": { "@id": "yapoom.in#organization" },
                 "name": "Yapoom Solutions",
-                "url": "https://www.yapoomsolutions.com",
-                "logo": "https://www.yapoomsolutions.com/logo/yapoom-logo-horizontal.webp",
-                "image": "https://www.yapoomsolutions.com/hero-modern-team.png",
+                "url": "https://www.yapoom.in",
+                "logo": "yapoom.inlogo/yapoom-logo-horizontal.webp",
+                "image": "yapoom.inhero-modern-team.png",
                 "description": "Scalable cloud, software, telecom, and hardware automation solutions tailored for your business growth.",
                 "address": {
                   "@type": "PostalAddress",

@@ -31,10 +31,10 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://www.yapoomsolutions.com/blog/${slug}`
+            "@id": `yapoom.inblog/${slug}`
         },
         "headline": post.title,
-        "image": `https://www.yapoomsolutions.com${post.image}`,
+        "image": `https://www.yapoom.in${post.image}`,
         "author": {
             "@type": "Person",
             "name": post.author
@@ -44,7 +44,7 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
             "name": "Yapoom Solutions",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.yapoomsolutions.com/logo/yapoom-logo-horizontal.webp"
+                "url": "yapoom.inlogo/yapoom-logo-horizontal.webp"
             }
         },
         "datePublished": "2026-05-10T08:00:00+00:00"
@@ -107,9 +107,9 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
 
                             <div style={{ marginTop: '50px', paddingTop: '20px', borderTop: '1px solid rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                 <span style={{ fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}><Share2 size={18} /> Share this article:</span>
-                                <a href={`https://twitter.com/intent/tweet?url=https://www.yapoomsolutions.com/blog/${slug}&text=${post.title}`} target="_blank" rel="noopener noreferrer" style={{ color: '#1DA1F2' }}><Twitter size={24} /></a>
-                                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=https://www.yapoomsolutions.com/blog/${slug}&title=${post.title}`} target="_blank" rel="noopener noreferrer" style={{ color: '#0077B5' }}><Linkedin size={24} /></a>
-                                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.yapoomsolutions.com/blog/${slug}`} target="_blank" rel="noopener noreferrer" style={{ color: '#4267B2' }}><Facebook size={24} /></a>
+                                <a href={`https://twitter.com/intent/tweet?url=yapoom.inblog/${slug}&text=${post.title}`} target="_blank" rel="noopener noreferrer" style={{ color: '#1DA1F2' }}><Twitter size={24} /></a>
+                                <a href={`https://www.linkedin.com/shareArticle?mini=true&url=yapoom.inblog/${slug}&title=${post.title}`} target="_blank" rel="noopener noreferrer" style={{ color: '#0077B5' }}><Linkedin size={24} /></a>
+                                <a href={`https://www.facebook.com/sharer/sharer.php?u=yapoom.inblog/${slug}`} target="_blank" rel="noopener noreferrer" style={{ color: '#4267B2' }}><Facebook size={24} /></a>
                             </div>
                         </article>
                     </div>

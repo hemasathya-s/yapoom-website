@@ -2,6 +2,6 @@
     <ShortName>Yapoom Search</ShortName>
     <Description>Search Yapoom Solutions for tech insights, cloud infrastructure documentation, and custom software case studies.</Description>
     <InputEncoding>UTF-8</InputEncoding>
-    <Image width="16" height="16" type="image/x-icon">https://www.yapoomsolutions.com/favicon.ico</Image>
-    <Url type="text/html" template="https://www.yapoomsolutions.com/blog?q={searchTerms}"/>
+    <Image width="16" height="16" type="image/x-icon">yapoom.infavicon.ico</Image>
+    <Url type="text/html" template="yapoom.inblog?q={searchTerms}"/>
 </OpenSearchDescription>

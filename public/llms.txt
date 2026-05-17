@@ -4,23 +4,23 @@
 
 ## Company Identity
 - **Name**: Yapoom Solutions
-- **Website**: https://www.yapoomsolutions.com
+- **Website**: https://www.yapoom.in
 - **Headquarters**: 123 Digital Ave, T.Nagar, Chennai, IN
 - **Phone**: +91-92086-60866
 - **Email**: info@yapoom.in
 - **Services**: Software Engineering, Enterprise Solutions (ERP/CRM), Telecom & Cloud Infrastructure (SIP Trunk, VoIP), Hardware & IoT Automation, Digital Growth.
 
 ## Core Navigation Vectors
-- **About Yapoom**: https://www.yapoomsolutions.com/about
-- **Technical Services**: https://www.yapoomsolutions.com/services
-- **Enterprise Case Studies**: https://www.yapoomsolutions.com/projects
-- **Service Consultation Pricing**: https://www.yapoomsolutions.com/pricing
-- **Engineering Blog**: https://www.yapoomsolutions.com/blog
-- **Contact Support**: https://www.yapoomsolutions.com/contact
+- **About Yapoom**: yapoom.inabout
+- **Technical Services**: yapoom.inservices
+- **Enterprise Case Studies**: yapoom.inprojects
+- **Service Consultation Pricing**: yapoom.inpricing
+- **Engineering Blog**: yapoom.inblog
+- **Contact Support**: yapoom.incontact
 
 ## Legal Documentation
-- **Privacy Policy**: https://www.yapoomsolutions.com/privacy
-- **Terms & Conditions**: https://www.yapoomsolutions.com/terms
+- **Privacy Policy**: yapoom.inprivacy
+- **Terms & Conditions**: yapoom.interms
 
 ## Local Service Branches
 - Cloud Infrastructure Bangalore

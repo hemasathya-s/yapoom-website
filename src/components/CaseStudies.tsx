@@ -14,7 +14,7 @@ export const CaseStudies = () => {
         "@context": "https://schema.org/",
         "@type": "Product",
         "name": "Yapoom Enterprise Solutions",
-        "image": "https://www.yapoomsolutions.com/hero-modern-team.png",
+        "image": "yapoom.inhero-modern-team.png",
         "description": "Enterprise-grade cloud architecture, custom software development, and specialized telecom VoIP builds.",
         "brand": {
             "@type": "Brand",

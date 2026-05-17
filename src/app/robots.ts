@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://www.yapoomsolutions.com'; // Replace with the actual production URL
+    const baseUrl = 'https://www.yapoom.in'; // Replace with the actual production URL
 
     return {
         rules: {
