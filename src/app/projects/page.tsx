@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
@@ -10,17 +9,16 @@ import styles from './styles.module.css';
 
 const ITEMS_PER_PAGE = 6;
 
-export default function ProjectsPage() {
-    const [currentPage, setCurrentPage] = useState(1);
+export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+    const params = await searchParams;
+    const pageParam = params.page;
+    const currentPage = typeof pageParam === 'string' ? parseInt(pageParam, 10) : 1;
 
     const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const validPage = isNaN(currentPage) || currentPage < 1 ? 1 : currentPage > totalPages ? totalPages : currentPage;
 
-    const handlePageChange = (page: number) => {
-        setCurrentPage(page);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    const startIndex = (validPage - 1) * ITEMS_PER_PAGE;
+    const currentProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     return (
         <main>
@@ -38,13 +36,13 @@ export default function ProjectsPage() {
                     {totalPages > 1 && (
                         <div className={styles.pagination}>
                             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                <button
+                                <Link
                                     key={page}
-                                    className={`${styles.pageButton} ${currentPage === page ? styles.activePage : ''}`}
-                                    onClick={() => handlePageChange(page)}
+                                    href={`/projects?page=${page}`}
+                                    className={`${styles.pageButton} ${validPage === page ? styles.activePage : ''}`}
                                 >
                                     {page}
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     )}

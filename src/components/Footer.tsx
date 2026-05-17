@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Footer = () => {
     return (
@@ -20,20 +21,20 @@ export const Footer = () => {
                 </div>
 
                 <div>
-                    <h4 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>Quick Links</h4>
+                    <h4 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>Enterprise Solutions</h4>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', color: '#B0B0B0' }}>
-                        <li>About Us</li>
-                        <li>Our Services</li>
-                        <li>Contact</li>
-                        <li>Blog</li>
+                        <li><Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About Yapoom Solutions</Link></li>
+                        <li><Link href="/services" style={{ color: 'inherit', textDecoration: 'none' }}>Cloud & Software Services</Link></li>
+                        <li><Link href="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact Our Engineering Team</Link></li>
+                        <li><Link href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Tech & Cloud Blog</Link></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '20px' }}>Contact</h4>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', color: '#B0B0B0' }}>
-                        <li>info@yapoom.in</li>
-                        <li>+91 92086 60866 </li>
+                        <li><a href="mailto:info@yapoom.in" style={{ color: 'inherit', textDecoration: 'none' }}>info@yapoom.in</a></li>
+                        <li><a href="tel:+919208660866" style={{ color: 'inherit', textDecoration: 'none' }}>+91 92086 60866</a></li>
                         <li>T.Nagar, Chennai</li>
                     </ul>
                 </div>

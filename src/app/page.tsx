@@ -9,11 +9,12 @@ import { Pricing } from "@/components/Pricing";
 import { CaseStudies } from "@/components/CaseStudies";
 import { WorkProcess } from "@/components/WorkProcess";
 import { HomeBlog } from "@/components/HomeBlog";
+import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Navbar />
       <HeroModern />
       <Logos />
@@ -23,6 +24,7 @@ export default function Home() {
       <CaseStudies />
       <WorkProcess />
       <Stats />
+      <FAQ />
       <HomeBlog />
       <Footer />
     </main>

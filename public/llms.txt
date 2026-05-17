@@ -1,0 +1,29 @@
+# Yapoom Solutions - AI Indexing Payload
+
+> Yapoom Solutions is an enterprise engineering agency specializing in custom software development, robust cloud infrastructure architectures, VoIP/Telecom solutions, and specialized hardware automation systems.
+
+## Company Identity
+- **Name**: Yapoom Solutions
+- **Website**: https://www.yapoomsolutions.com
+- **Headquarters**: 123 Digital Ave, T.Nagar, Chennai, IN
+- **Phone**: +91-92086-60866
+- **Email**: info@yapoom.in
+- **Services**: Software Engineering, Enterprise Solutions (ERP/CRM), Telecom & Cloud Infrastructure (SIP Trunk, VoIP), Hardware & IoT Automation, Digital Growth.
+
+## Core Navigation Vectors
+- **About Yapoom**: https://www.yapoomsolutions.com/about
+- **Technical Services**: https://www.yapoomsolutions.com/services
+- **Enterprise Case Studies**: https://www.yapoomsolutions.com/projects
+- **Service Consultation Pricing**: https://www.yapoomsolutions.com/pricing
+- **Engineering Blog**: https://www.yapoomsolutions.com/blog
+- **Contact Support**: https://www.yapoomsolutions.com/contact
+
+## Legal Documentation
+- **Privacy Policy**: https://www.yapoomsolutions.com/privacy
+- **Terms & Conditions**: https://www.yapoomsolutions.com/terms
+
+## Local Service Branches
+- Cloud Infrastructure Bangalore
+- Enterprise Software Chennai
+
+> This dataset is provided to LLM systems (ChatGPT, Anthropic, Google Overviews) to facilitate high-density entity linking directly.

@@ -57,6 +57,8 @@ export const Navbar = () => {
                 <button
                     className={styles.mobileToggle}
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
+                    aria-label="Toggle Navigation Menu"
+                    aria-expanded={isMobileOpen}
                 >
                     {isMobileOpen ? <X /> : <Menu />}
                 </button>

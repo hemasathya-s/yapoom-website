@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, Check } from 'lucide-react';
+import Script from 'next/script';
 import styles from './Pricing.module.css';
 
 const plans = [
@@ -52,8 +53,30 @@ const plans = [
 ];
 
 export const Pricing = () => {
+    const schemas = plans.map(plan => ({
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": plan.title,
+        "description": plan.description,
+        "brand": {
+            "@type": "Brand",
+            "name": "Yapoom Solutions"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "Contact for pricing",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }));
+
     return (
         <section className={styles.section}>
+            <Script
+                id="pricing-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+            />
             <div className={`container`}>
                 <div className={styles.header}>
                     <span className={styles.label}>View Plan</span>
