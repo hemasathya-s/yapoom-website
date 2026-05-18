@@ -1,10 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { services } from '@/data/services';
+import { PrismaClient } from '@prisma/client';
 import styles from './Services.module.css';
 
-export const Services = () => {
+export const Services = async () => {
+    const prisma = new PrismaClient();
+    const services = await prisma.service.findMany();
+
     return (
         <section className={styles.section} id="services">
             <div className={`container ${styles.header}`}>
@@ -12,7 +15,7 @@ export const Services = () => {
             </div>
 
             <div className={`container ${styles.grid}`}>
-                {services.map((service) => (
+                {services.map((service: any) => (
                     <Link href={`/services/${service.slug}`} key={service.id} className={styles.cardLink}>
                         <div className={styles.card}>
                             <Image
@@ -22,7 +25,7 @@ export const Services = () => {
                                 className={styles.cardImage}
                             />
                             <div className={styles.overlay}>
-                                <span className={styles.number}>{service.id} {service.subtitle}</span>
+                                <span className={styles.number}>{service.subtitle}</span>
                                 <h3 className={styles.cardTitle}>{service.title}</h3>
                             </div>
                         </div>

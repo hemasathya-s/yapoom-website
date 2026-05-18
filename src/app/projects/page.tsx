@@ -4,21 +4,30 @@ import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { PrismaClient } from "@prisma/client";
 import styles from './styles.module.css';
 
 const ITEMS_PER_PAGE = 6;
 
 export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
     const params = await searchParams;
+
+    // Pagination params
     const pageParam = params.page;
     const currentPage = typeof pageParam === 'string' ? parseInt(pageParam, 10) : 1;
 
-    const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+    const prisma = new PrismaClient();
+
+    const totalProjects = await prisma.project.count();
+    const totalPages = Math.ceil(totalProjects / ITEMS_PER_PAGE);
+
     const validPage = isNaN(currentPage) || currentPage < 1 ? 1 : currentPage > totalPages ? totalPages : currentPage;
 
-    const startIndex = (validPage - 1) * ITEMS_PER_PAGE;
-    const currentProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const currentProjects = await prisma.project.findMany({
+        skip: (validPage - 1) * ITEMS_PER_PAGE,
+        take: ITEMS_PER_PAGE,
+        orderBy: { createdAt: 'desc' }
+    });
 
     return (
         <main>
@@ -28,7 +37,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
             <section className={styles.section}>
                 <div className="container">
                     <div className={styles.grid}>
-                        {currentProjects.map((project) => (
+                        {currentProjects.map((project: any) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
                     </div>

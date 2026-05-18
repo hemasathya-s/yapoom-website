@@ -4,37 +4,44 @@ import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { BlogCard } from "@/components/BlogCard";
-import { blogs } from "@/data/blogs";
+import { PrismaClient } from '@prisma/client';
 import styles from './styles.module.css';
 
 const ITEMS_PER_PAGE = 6;
 
 export default async function BlogPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
     const params = await searchParams;
+    const page = typeof params.page === 'string' ? parseInt(params.page) : 1;
+    const itemsPerPage = 6;
+    const query = typeof params.q === 'string' ? params.q.toLowerCase() : '';
 
-    // Pagination params
-    const pageParam = params.page;
-    const currentPage = typeof pageParam === 'string' ? parseInt(pageParam, 10) : 1;
+    const prisma = new PrismaClient();
 
-    // Search Params
-    const searchQuery = typeof params.q === 'string' ? params.q.toLowerCase() : '';
+    // Fetch total matching records
+    const totalBlogs = await prisma.blog.count({
+        where: query ? {
+            OR: [
+                { title: { contains: query } },
+                { content: { contains: query } }
+            ]
+        } : undefined
+    });
 
-    // Filter logic
-    let filteredBlogs = blogs;
-    if (searchQuery) {
-        filteredBlogs = blogs.filter(b =>
-            b.title.toLowerCase().includes(searchQuery) ||
-            b.category.toLowerCase().includes(searchQuery) ||
-            b.author.toLowerCase().includes(searchQuery) ||
-            b.content.toLowerCase().includes(searchQuery)
-        );
-    }
+    const totalPages = Math.ceil(totalBlogs / itemsPerPage);
 
-    const totalPages = Math.ceil(filteredBlogs.length / ITEMS_PER_PAGE);
-    const validPage = isNaN(currentPage) || currentPage < 1 ? 1 : currentPage > totalPages ? totalPages : currentPage;
+    const filteredBlogs = await prisma.blog.findMany({
+        where: query ? {
+            OR: [
+                { title: { contains: query } },
+                { content: { contains: query } }
+            ]
+        } : undefined,
+        skip: (page - 1) * itemsPerPage,
+        take: itemsPerPage,
+        orderBy: { createdAt: 'desc' }
+    });
 
-    const startIndex = (validPage - 1) * ITEMS_PER_PAGE;
-    const currentBlogs = filteredBlogs.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const validPage = isNaN(page) || page < 1 ? 1 : page > totalPages ? totalPages : page;
 
     return (
         <main>
@@ -44,7 +51,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             <section className={styles.section}>
                 <div className="container">
                     <div className={styles.grid}>
-                        {currentBlogs.map((blog) => (
+                        {filteredBlogs.map((blog: any) => (
                             <BlogCard key={blog.id} post={blog} />
                         ))}
                     </div>

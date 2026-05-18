@@ -1,0 +1,118 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--background-secondary);
+    border-right: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.navLink {
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+    background-color: var(--hover-bg, rgba(0, 0, 0, 0.05));
+    color: var(--primary);
+}
+
+.navLink.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--background);
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logoutBtn {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: auto;
+    transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+    background: #ffebee;
+    color: #c62828;
+    border-color: #ef9a9a;
+}
+
+.loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.loginCard {
+    background: white;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+.loginButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.loginButton:hover {
+    background: #f8f9fa;
+}

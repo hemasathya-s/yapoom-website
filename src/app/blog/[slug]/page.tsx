@@ -3,28 +3,40 @@ import Image from 'next/image';
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
-import { blogs } from "@/data/blogs";
+import { PrismaClient } from "@prisma/client";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { User, Calendar, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
 import styles from './styles.module.css';
 
 export async function generateStaticParams() {
-    return blogs.map((post) => ({
+    const prisma = new PrismaClient();
+    const allBlogs = await prisma.blog.findMany({ select: { slug: true } });
+    return allBlogs.map((post: any) => ({
         slug: post.slug,
     }));
 }
 
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const post = blogs.find((p) => p.slug === slug);
+    const prisma = new PrismaClient();
+
+    const post = await prisma.blog.findUnique({
+        where: { slug }
+    });
 
     if (!post) {
         notFound();
     }
 
-    const recentPosts = blogs.filter(p => p.id !== post.id).slice(0, 3);
-    const categories = Array.from(new Set(blogs.map(b => b.category)));
+    const recentPosts = await prisma.blog.findMany({
+        where: { id: { not: post.id } },
+        take: 3,
+        orderBy: { createdAt: 'desc' }
+    });
+
+    const allCategories = await prisma.blog.findMany({ select: { category: true } });
+    const categories = Array.from(new Set(allCategories.map((b: any) => b.category)));
 
     const schema = {
         "@context": "https://schema.org",
@@ -118,11 +130,10 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
                         <div className={styles.widget}>
                             <h3 className={styles.widgetTitle}>Categories</h3>
                             <ul className={styles.categoryList}>
-                                {categories.map(category => (
+                                {categories.map((category: any) => (
                                     <li key={category} className={styles.categoryItem}>
                                         <Link href="#" className={styles.categoryLink}>
                                             <span>{category}</span>
-                                            <span>({blogs.filter(b => b.category === category).length})</span>
                                         </Link>
                                     </li>
                                 ))}
@@ -132,7 +143,7 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
                         <div className={styles.widget}>
                             <h3 className={styles.widgetTitle}>Recent Posts</h3>
                             <div>
-                                {recentPosts.map(recent => (
+                                {recentPosts.map((recent: any) => (
                                     <div key={recent.id} className={styles.recentPost}>
                                         <div className={styles.recentImageWrapper}>
                                             <Image src={recent.image} alt={recent.title} fill style={{ objectFit: 'cover' }} />
